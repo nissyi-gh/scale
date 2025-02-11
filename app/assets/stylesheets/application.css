@@ -58,3 +58,11 @@ li > span.status {
 .complete-sub-task {
   color: #00d24d;
 }
+
+.task-form {
+  border-top: 2px solid #b2b2b2;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 1200px;
+}
