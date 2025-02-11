@@ -7,5 +7,7 @@ class CreateTasks < ActiveRecord::Migration[8.0]
       t.text :note
       t.timestamps
     end
+
+    add_index :tasks, :status
   end
 end
