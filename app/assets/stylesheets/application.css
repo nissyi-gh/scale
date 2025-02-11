@@ -17,4 +17,10 @@ li {
   border-radius: 4px;
   padding: 10px;
   padding-right: 0px;
+  position: relative;
+}
+
+li > span.status {
+  position: absolute;
+  right: 10px;
 }
