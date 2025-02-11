@@ -6,6 +6,7 @@ module TasksHelper
           concat(content_tag(:li) do
             concat sub_task.title
             concat render_task_status(sub_task)
+            concat render_task_controls(sub_task)
             concat render_sub_task_tree(sub_task)
           end)
         end
@@ -19,6 +20,14 @@ module TasksHelper
       content_tag(:span, "✓", class: "status")
     else
       content_tag(:span, task.status, class: "status")
+    end
+  end
+
+  def render_task_controls(task)
+    content_tag(:div, class: "task-controls") do
+      content_tag(:span, "+", class: "add-sub-task") +
+      content_tag(:span, "-", class: "delete-sub-task") +
+      content_tag(:span, "✓", class: "complete-sub-task")
     end
   end
 end
