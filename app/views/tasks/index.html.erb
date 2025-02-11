@@ -1,0 +1,10 @@
+<h1>Tasks</h1>
+
+<ol>
+  <% @tasks.where(parent_task_id: nil).each do |task| %>
+    <li>
+      <%= task.title %>
+      <%= render_sub_task_tree(task) %>
+    </li>
+  <% end %>
+</ol>
