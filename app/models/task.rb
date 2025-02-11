@@ -7,6 +7,9 @@ class Task < ApplicationRecord
     archived: 4
   }
 
+  belongs_to :parent_task, class_name: "Task", optional: true
+  has_many :sub_tasks, class_name: "Task", foreign_key: :parent_task_id, dependent: :destroy
+
   validates :title, presence: true
   validates :status, presence: true
 end
