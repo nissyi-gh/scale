@@ -4,6 +4,7 @@ module TasksHelper
       content_tag(:ol) do
         task.sub_tasks.each do |sub_task|
           concat(content_tag(:li) do
+            concat content_tag(:span, "#{sub_task.id}: ", class: "task-id")
             concat sub_task.title
             concat render_task_status(sub_task)
             concat render_task_controls(sub_task)
