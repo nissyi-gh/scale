@@ -18,7 +18,7 @@ ol > li > ol {
 li {
   border: 2px solid #777777;
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 8px 10px;
   padding-right: 0px;
   position: relative;
 }
@@ -74,4 +74,21 @@ li:not(.root-task) {
 
 a {
   color: #989898;
+}
+
+input {
+  background-color: #242424;
+  color: #d0d0d0;
+  border: 1px solid #777777;
+  border-radius: 4px;
+  margin-right: 2px;
+  padding: 8px 4px;
+}
+
+input[type="text"] {
+  width: 240px;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
 }
