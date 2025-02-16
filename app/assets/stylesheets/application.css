@@ -26,6 +26,26 @@ li > span.status {
   right: 120px;
 }
 
+.root-task {
+  background-color: #828282;
+}
+
+.level-0 {
+  background-color: #828282;
+}
+
+.level-1 {
+  background-color: #a2a2a2;
+}
+
+.level-2 {
+  background-color: #c2c2c2;
+}
+
+.level-3 {
+  background-color: #e2e2e2;
+}
+
 .task-controls {
   display: inline-block;
   position: absolute;
