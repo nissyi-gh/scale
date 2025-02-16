@@ -11,7 +11,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create!(task_params)
-    redirect_to tasks_path
+    redirect_back(fallback_location: tasks_path)
   end
 
   private
