@@ -6,13 +6,3 @@
     <%= render_sub_task_tree(@parent_task) %>
   </li>
 </ol>
-
-<%= form_with model: @task, class: "task-form" do |form| %>
-  <%= form.label :parent_task_id, "親のtask id" %>
-  <%= form.number_field :parent_task_id, value: nil %>
-
-  <%= form.label :title, "タスク名" %>
-  <%= form.text_field :title %>
-
-  <%= form.submit %>
-<% end %>

@@ -25,9 +25,11 @@ li:not(.root-task) {
   border-right: 0px;
 }
 
-li > span.status {
+.task-controls {
+  display: flex;
   position: absolute;
-  right: 120px;
+  right: 12px;
+  top: 4px;
 }
 
 .root-task {
@@ -48,51 +50,4 @@ li > span.status {
 
 .level-3 {
   background-color: #e2e2e2;
-}
-
-.task-controls {
-  display: inline-block;
-  position: absolute;
-  right: 10px;
-}
-
-.task-controls span {
-  display: inline-block;
-  cursor: pointer;
-  margin: 0 4px;
-  margin-right: 0px;
-  padding: 4px;
-  width: 12px;
-  text-align: center;
-  line-height: 16px;
-  font-weight: bold;
-}
-
-.task-controls span:hover {
-  background-color: #ffbaba;
-}
-
-.add-sub-task {
-  color: #ff4e4e;
-}
-
-.delete-sub-task {
-  color: #505eff;
-}
-
-.complete-sub-task {
-  color: #00d24d;
-}
-
-.task-form {
-  border-top: 2px solid #b2b2b2;
-  position: fixed;
-  bottom: 0;
-  padding: 10px;
-  width: 1200px;
-}
-
-.task-link {
-  position: absolute;
-  right: 10px;
 }
