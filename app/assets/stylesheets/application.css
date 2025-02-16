@@ -21,6 +21,10 @@ li {
   position: relative;
 }
 
+li:not(.root-task) {
+  border-right: 0px;
+}
+
 li > span.status {
   position: absolute;
   right: 120px;
