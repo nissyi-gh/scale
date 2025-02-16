@@ -31,7 +31,7 @@ module TasksHelper
       render_task_delete_form(task) +
       render_task_todo_form(task) +
       render_task_doing_form(task) +
-      render_task_complete_form(task)
+      render_task_done_form(task)
     end
   end
 
@@ -53,30 +53,18 @@ module TasksHelper
     end
   end
 
-  def render_task_complete_form(task)
+  def render_task_form(task, task_status)
     content_tag(:div, class: "task-form task-form-visible") do
       form_with model: task, method: :patch do |f|
-        concat f.hidden_field :status, value: "done"
-        concat f.submit "Complete", class: "complete-sub-task"
+        concat f.hidden_field :status, value: task_status
+        concat f.submit task_status.camelize, class: "#{task_status}-sub-task"
       end
     end
   end
 
-  def render_task_todo_form(task)
-    content_tag(:div, class: "task-form task-form-visible") do
-      form_with model: task, method: :patch do |f|
-        concat f.hidden_field :status, value: "todo"
-        concat f.submit "Todo", class: "todo-sub-task"
-      end
-    end
-  end
-
-  def render_task_doing_form(task)
-    content_tag(:div, class: "task-form task-form-visible") do
-      form_with model: task, method: :patch do |f|
-        concat f.hidden_field :status, value: "doing"
-        concat f.submit "Doing", class: "doing-sub-task"
-      end
+  %w[todo doing done].each do |status|
+    define_method("render_task_#{status}_form") do |task|
+      render_task_form(task, status)
     end
   end
 end
