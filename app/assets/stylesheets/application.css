@@ -25,6 +25,24 @@ li:not(.root-task) {
   border-right: 0px;
 }
 
+.status {
+  font-size: 12px;
+  color: #828282;
+  background-color: #c7c7c7;
+  padding: 2px 4px;
+  margin-right: 4px;
+}
+
+.status.done {
+  background-color: #1b9e1b;
+  color: #e0e0e0;
+}
+
+.status.doing {
+  background-color: #ca6138;
+  color: #e0e0e0;
+}
+
 .task-controls {
   display: flex;
   position: absolute;

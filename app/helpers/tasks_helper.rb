@@ -4,9 +4,8 @@ module TasksHelper
       content_tag(:ol) do
         task.sub_tasks.each do |sub_task|
           concat(content_tag(:li, class: "level-#{level}") do
-            concat content_tag(:span, "#{sub_task.id}: ", class: "task-id")
-            concat sub_task.title
             concat render_task_status(sub_task)
+            concat sub_task.title
             concat render_task_controls(sub_task)
             concat render_sub_task_tree(sub_task, level + 1)
           end)
@@ -18,7 +17,9 @@ module TasksHelper
   def render_task_status(task)
     case task.status
     when "done"
-      content_tag(:span, "✓", class: "status")
+      content_tag(:span, "✓", class: "status done")
+    when "doing"
+      content_tag(:span, task.status, class: "status doing")
     else
       content_tag(:span, task.status, class: "status")
     end
