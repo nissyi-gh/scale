@@ -88,3 +88,7 @@ input {
 input[type="text"] {
   width: 240px;
 }
+
+input[type="submit"]:hover {
+  cursor: pointer;
+}
