@@ -29,6 +29,8 @@ module TasksHelper
     content_tag(:div, class: "task-controls") do
       render_task_add_form(task) +
       render_task_delete_form(task) +
+      render_task_todo_form(task) +
+      render_task_doing_form(task) +
       render_task_complete_form(task)
     end
   end
@@ -56,6 +58,24 @@ module TasksHelper
       form_with model: task, method: :patch do |f|
         concat f.hidden_field :status, value: "done"
         concat f.submit "Complete", class: "complete-sub-task"
+      end
+    end
+  end
+
+  def render_task_todo_form(task)
+    content_tag(:div, class: "task-form task-form-visible") do
+      form_with model: task, method: :patch do |f|
+        concat f.hidden_field :status, value: "todo"
+        concat f.submit "Todo", class: "todo-sub-task"
+      end
+    end
+  end
+
+  def render_task_doing_form(task)
+    content_tag(:div, class: "task-form task-form-visible") do
+      form_with model: task, method: :patch do |f|
+        concat f.hidden_field :status, value: "doing"
+        concat f.submit "Doing", class: "doing-sub-task"
       end
     end
   end
