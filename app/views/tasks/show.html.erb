@@ -1,0 +1,12 @@
+<h1>Tasks</h1>
+
+<ol>
+  <li class="root-task">
+    <%= @parent_task.title %>
+    <%= render_task_status(@parent_task) %>
+    <%= render_task_controls(@parent_task) %>
+    <%= render_sub_task_tree(@parent_task) %>
+  </li>
+</ol>
+
+<%= link_to "back_to_tasks", tasks_path, class: "back-to-tasks" %>

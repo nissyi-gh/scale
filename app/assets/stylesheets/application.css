@@ -1,10 +1,77 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+body {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #303030;
+  color: #d6d6d6;
+}
+
+ol {
+  padding-left: 0px;
+  margin-bottom: 4px;
+  list-style: none;
+}
+
+ol > li > ol {
+  margin-top: 10px;
+}
+
+li {
+  border: 2px solid #777777;
+  border-radius: 4px;
+  padding: 4px 10px;
+  padding-right: 0px;
+  position: relative;
+}
+
+li:not(.root-task) {
+  border-right: 0px;
+}
+
+.status {
+  font-size: 12px;
+  color: #1a1a1a;
+  background-color: #9e9e9e;
+  padding: 2px 4px;
+  margin-right: 4px;
+}
+
+.status.done {
+  background-color: #1b9e1b;
+  color: #e0e0e0;
+}
+
+.status.doing {
+  background-color: #ca6138;
+  color: #e0e0e0;
+}
+
+.task-controls {
+  display: flex;
+  position: absolute;
+  right: 12px;
+  top: 4px;
+}
+
+.root-task {
+  background-color: #383838;
+}
+
+.level-0 {
+  background-color: #383838;
+}
+
+.level-1 {
+  background-color: #3b3b3b;
+}
+
+.level-2 {
+  background-color: #424242;
+}
+
+.level-3 {
+  background-color: #424242;
+}
+
+a {
+  color: #989898;
+}
