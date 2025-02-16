@@ -71,3 +71,7 @@ li:not(.root-task) {
 .level-3 {
   background-color: #424242;
 }
+
+a {
+  color: #989898;
+}
