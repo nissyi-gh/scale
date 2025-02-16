@@ -1,12 +1,10 @@
 <h1>Tasks</h1>
 
 <ol>
-  <% @tasks.where(parent_task_id: nil).each do |task| %>
-    <li>
-      <%= task.title %>
-      <%= link_to "Show", task_path(task), class: "task-link" %>
-    </li>
-  <% end %>
+  <li>
+    <%= @parent_task.title %>
+    <%= render_sub_task_tree(@parent_task) %>
+  </li>
 </ol>
 
 <%= form_with model: @task, class: "task-form" do |form| %>

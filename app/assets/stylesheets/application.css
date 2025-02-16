@@ -4,6 +4,7 @@ body {
 }
 
 ol {
+  padding-left: 0px;
   margin-bottom: 4px;
   list-style: none;
 }
@@ -65,4 +66,9 @@ li > span.status {
   bottom: 0;
   padding: 10px;
   width: 1200px;
+}
+
+.task-link {
+  position: absolute;
+  right: 10px;
 }

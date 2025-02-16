@@ -1,7 +1,12 @@
 class TasksController < ApplicationController
   def index
     @task = Task.new
-    @tasks = Task.all
+    @tasks = Task.where(parent_task_id: nil)
+  end
+
+  def show
+    @task = Task.new
+    @parent_task = Task.find(params[:id])
   end
 
   def create
