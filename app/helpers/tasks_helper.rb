@@ -15,13 +15,11 @@ module TasksHelper
   end
 
   def render_task_status(task)
-    case task.status
-    when "done"
-      content_tag(:span, "✓", class: "status done")
-    when "doing"
-      content_tag(:span, task.status, class: "status doing")
-    else
-      content_tag(:span, task.status, class: "status")
+    content_tag(:div, class: "task-status") do
+      form_with model: task, method: :patch do |f|
+        concat f.select :status, options_for_select(["todo", "done", "doing", "pending"], task.status), class: "status-select"
+        concat f.submit "Update", class: "update-status"
+      end
     end
   end
 
