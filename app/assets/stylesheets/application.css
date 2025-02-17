@@ -1,5 +1,6 @@
 body {
-  width: 1200px;
+  width: 80%;
+  min-width: 320px;
   margin: 0 auto;
   background-color: #303030;
   color: #d6d6d6;
@@ -31,10 +32,7 @@ li {
   padding: 8px 10px;
   padding-right: 0px;
   position: relative;
-}
-
-li:not(.root-task) {
-  border-right: 0px;
+  right: -2px;
 }
 
 .status {
@@ -101,4 +99,9 @@ input[type="text"] {
 
 input[type="submit"]:hover {
   cursor: pointer;
+}
+
+.task-form > form > input[type="submit"] {
+  min-width: 24px;
+  display: inline-block;
 }

@@ -40,7 +40,7 @@ module TasksHelper
       form_with model: @task do |f|
         concat f.hidden_field :parent_task_id, value: parent_task.id
         concat f.text_field :title
-        concat f.submit "Add"
+        concat f.submit "+"
       end
     end
   end
@@ -48,7 +48,7 @@ module TasksHelper
   def render_task_delete_form(task)
     content_tag(:div, class: "task-form task-form-visible") do
       form_with model: task, method: :delete do |f|
-        concat f.submit "Delete", class: "delete-sub-task"
+        concat f.submit "-", class: "delete-sub-task"
       end
     end
   end
