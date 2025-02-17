@@ -32,10 +32,7 @@ li {
   padding: 8px 10px;
   padding-right: 0px;
   position: relative;
-}
-
-li:not(.root-task) {
-  border-right: 0px;
+  right: -2px;
 }
 
 .status {
