@@ -5,6 +5,16 @@ body {
   color: #d6d6d6;
 }
 
+h1 {
+  margin: 12px auto;
+}
+
+h1 > a {
+  font-size: 20px;
+  color: #d6d6d6;
+  text-decoration: none;
+}
+
 ol {
   padding-left: 0px;
   margin-bottom: 4px;
