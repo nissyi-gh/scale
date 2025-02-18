@@ -2,18 +2,14 @@
   <% @tasks.where(parent_task_id: nil).each do |task| %>
     <li>
       <%= render_task_status(task) %>
-      <%= task.title %>
-      <%= link_to "Show", task_path(task), class: "task-link" %>
+      <%= link_to task.title, task_path(task), class: "task-link" %>
     </li>
   <% end %>
 </ol>
 
 <%= form_with model: @task, class: "task-form" do |form| %>
-  <%= form.label :parent_task_id, "親のtask id" %>
-  <%= form.number_field :parent_task_id, value: nil %>
-
-  <%= form.label :title, "タスク名" %>
+  <%= form.label :title, "新規ルートタスク" %>
   <%= form.text_field :title %>
 
-  <%= form.submit %>
+  <%= form.submit "Create" %>
 <% end %>
