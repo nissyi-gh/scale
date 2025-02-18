@@ -84,6 +84,11 @@ a {
   color: #989898;
 }
 
+.task-link {
+  text-decoration: none;
+  color: #d6d6d6;
+}
+
 input {
   background-color: #242424;
   color: #d0d0d0;

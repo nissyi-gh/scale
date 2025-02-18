@@ -2,8 +2,7 @@
   <% @tasks.where(parent_task_id: nil).each do |task| %>
     <li>
       <%= render_task_status(task) %>
-      <%= task.title %>
-      <%= link_to "Show", task_path(task), class: "task-link" %>
+      <%= link_to task.title, task_path(task), class: "task-link" %>
     </li>
   <% end %>
 </ol>
