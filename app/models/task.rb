@@ -12,4 +12,8 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
   validates :status, presence: true
+
+  def root?
+    parent_task_id.nil?
+  end
 end
