@@ -53,6 +53,11 @@ li {
   color: #e0e0e0;
 }
 
+.status.pending {
+  background-color: #5e258f;
+  color: #e0e0e0;
+}
+
 .task-controls {
   display: flex;
   position: absolute;

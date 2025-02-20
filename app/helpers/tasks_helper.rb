@@ -20,6 +20,8 @@ module TasksHelper
       content_tag(:span, "✓", class: "status done")
     when "doing"
       content_tag(:span, task.status, class: "status doing")
+    when "pending"
+      content_tag(:span, task.status, class: "status pending")
     else
       content_tag(:span, task.status, class: "status")
     end
