@@ -31,6 +31,7 @@ module TasksHelper
       render_task_delete_form(task) +
       render_task_todo_form(task) +
       render_task_doing_form(task) +
+      render_task_pending_form(task) +
       render_task_done_form(task)
     end
   end
@@ -62,7 +63,7 @@ module TasksHelper
     end
   end
 
-  %w[todo doing done].each do |status|
+  %w[todo doing done pending].each do |status|
     define_method("render_task_#{status}_form") do |task|
       render_task_form(task, status)
     end
