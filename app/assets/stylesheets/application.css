@@ -115,3 +115,15 @@ input[type="submit"]:hover {
   min-width: 24px;
   display: inline-block;
 }
+
+.task-form > form > .doing-sub-task {
+  border-color: #ca6138;
+}
+
+.task-form > form > .pending-sub-task {
+  border-color: #a678ce;
+}
+
+.task-form > form > .done-sub-task {
+  border-color: #1b9e1b;
+}
