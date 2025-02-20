@@ -94,6 +94,11 @@ a {
   color: #d6d6d6;
 }
 
+.task-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 input {
   background-color: #242424;
   color: #d0d0d0;
