@@ -121,6 +121,10 @@ input[type="submit"]:hover {
   display: inline-block;
 }
 
+.task-deadline-form {
+  margin-right: 8px;
+}
+
 .task-form > form > .doing-sub-task {
   border-color: #ca6138;
 }
