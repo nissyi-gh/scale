@@ -29,12 +29,22 @@ module TasksHelper
 
   def render_task_controls(task)
     content_tag(:div, class: "task-controls") do
+      render_task_deadline_form(task) +
       render_task_add_form(task) +
       render_task_delete_form(task) +
       render_task_todo_form(task) +
       render_task_doing_form(task) +
       render_task_pending_form(task) +
       render_task_done_form(task)
+    end
+  end
+
+  def render_task_deadline_form(task)
+    content_tag(:div, class: "task-form task-deadline-form task-form-visible") do
+      form_with model: task, method: :patch do |f|
+        concat f.date_field :deadline
+        concat f.submit "Set"
+      end
     end
   end
 
