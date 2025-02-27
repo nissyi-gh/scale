@@ -1,3 +1,11 @@
+<div class="filter-buttons">
+  <%= link_to "All", tasks_path, class: "filter-button" %>
+  <%= link_to "todo", tasks_path(filter: "todo"), class: "filter-button" %>
+  <%= link_to "doing", tasks_path(filter: "doing"), class: "filter-button" %>
+  <%= link_to "pending", tasks_path(filter: "pending"), class: "filter-button" %>
+  <%= link_to "done", tasks_path(filter: "done"), class: "filter-button" %>
+</div>
+
 <ol>
   <% @tasks.where(parent_task_id: nil).each do |task| %>
     <li>
