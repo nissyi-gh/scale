@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   def index
     @task = Task.new
     @tasks = Task.where(parent_task_id: nil)
+    @tasks = @tasks.where(status: params[:filter]) if params[:filter].present?
   end
 
   def show
