@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
 
-    if @task.root? && @task.destroy
+    if @task.destroy & @task.root?
       redirect_to tasks_path
     else
       redirect_back(fallback_location: tasks_path)
