@@ -6,3 +6,5 @@
     <%= render_sub_task_tree(@parent_task) %>
   </li>
 </ol>
+
+<%= link_to "Markdownで出力", export_markdown_task_path, class: "btn btn-primary" %>

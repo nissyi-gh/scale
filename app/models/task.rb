@@ -16,4 +16,15 @@ class Task < ApplicationRecord
   def root?
     parent_task_id.nil?
   end
+
+  def to_markdown(indent_level = 0)
+    checkbox = status == "done" ? "[x]" : "[ ]"
+    markdown = "#{"  " * indent_level}- #{checkbox} #{title}\n"
+
+    sub_tasks.each do |child|
+      markdown += child.to_markdown(indent_level + 1)
+    end
+
+    markdown
+  end
 end
