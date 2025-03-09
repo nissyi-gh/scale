@@ -31,6 +31,13 @@ class TasksController < ApplicationController
     redirect_back(fallback_location: tasks_path)
   end
 
+  def export_markdown
+    root_task = Task.find(params[:id])
+    @markdown_content = root_task.to_markdown
+
+    send_data @markdown_content.encode("UTF-8"), filename: "tasks.md", type: "text/markdown; charset=UTF-8", disposition: "inline"
+  end
+
   private
 
   def task_params

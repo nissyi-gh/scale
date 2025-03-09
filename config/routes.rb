@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :tasks, only: [:index, :create, :show, :destroy, :update]
+
+  resources :tasks do
+    member do
+      get :export_markdown
+    end
+  end
 end
